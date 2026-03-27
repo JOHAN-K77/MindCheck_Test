@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="UTF-8">
+<title>MindCheck</title>
+
+<link rel="stylesheet" href="style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+</head>
+
+<body>
+
+<header>
+
+<h2>MindCheck</h2>
+
+<div>
+
+<button id="homeBtn" onclick="goHome()">HOME</button>
+<button onclick="toggleDark()">Dark Mode</button>
+
+</div>
+
+</header>
+
+
+<!-- PAGE 1 -->
+
+<section id="home">
+
+<h1>Online Mental Health Self-Assessment</h1>
+
+<p>
+Take scientifically inspired psychological screening tests to better understand your mental wellbeing.
+</p>
+
+<button onclick="startAssessment()">Start Assessment</button>
+
+<p class="note">
+This screening test is not a medical diagnosis and should not replace professional consultation.
+</p>
+
+</section>
+
+
+<!-- PAGE 2 -->
+
+<section id="menu">
+
+<h2>Select Assessment</h2>
+
+<div class="grid">
+
+<div class="card">
+<span class="num">1</span>
+<h3>Depression Test</h3>
+<p>Check depression symptoms</p>
+<button onclick="chooseTest('Depression Test')">Start Test</button>
+</div>
+
+<div class="card">
+<span class="num">2</span>
+<h3>Anxiety Test</h3>
+<p>Evaluate anxiety level</p>
+<button onclick="chooseTest('Anxiety Test')">Start Test</button>
+</div>
+
+<div class="card">
+<span class="num">3</span>
+<h3>Stress Test</h3>
+<p>Measure stress level</p>
+<button onclick="chooseTest('Stress Test')" class="not_ready" disabled>Start Test</button>
+</div>
+
+<div class="card">
+<span class="num">4</span>
+<h3>Burnout Test</h3>
+<p>Work fatigue screening</p>
+<button onclick="chooseTest('Burnout Test')" class="not_ready" disabled>Start Test</button>
+</div>
+
+<div class="card">
+<span class="num">5</span>
+<h3>Trauma Test</h3>
+<p>Evaluate trauma symptoms</p>
+<button onclick="chooseTest('Trauma Test')" class="not_ready" disabled>Start Test</button>
+</div>
+
+<div class="card">
+<span class="num">6</span>
+<h3>Personality Test</h3>
+<p>Explore personality traits</p>
+<button onclick="chooseTest('Personality Test')" class="not_ready" disabled>Start Test</button>
+</div>
+
+<div class="card">
+<span class="num">*</span>
+<h3>Screening</h3>
+<p>Screening Mental Health</p>
+<button onclick="chooseTest('Screening')">Start Test</button>
+</div>
+
+</div>
+
+<p class="note">
+Select one test, and finish all questions to get the result.
+</p>
+
+<p class="note">
+This screening test is not a medical diagnosis and should not replace professional consultation.
+</p>
+
+</section>
+
+
+<!-- PAGE 3 -->
+
+<section id="user">
+
+<h2>User Information</h2>
+
+<label>Name</label>
+<input id="name">
+
+<label>Age</label>
+<input id="age">
+
+<label>Gender</label>
+
+<select id="gender">
+<option value="">Select</option>
+<option>Male</option>
+<option>Female</option>
+</select>
+
+<br>
+
+<button onclick="startTest()">Start Test</button>
+
+<button onclick="backMenu()">Back to Selection Menu</button>
+
+<p class="note">
+This screening test is not a medical diagnosis and should not replace professional consultation.
+</p>
+
+</section>
+
+
+<!-- PAGE 4 -->
+
+<section id="test">
+
+<h2 id="testTitle"></h2>
+
+<p id="questionCount"></p>
+
+<p id="questionText"></p>
+
+<div id="answers"></div>
+
+<br>
+
+<button onclick="prevQuestion()">Back / Previous</button>
+
+<button onclick="nextQuestion()">Next</button>
+
+<button onclick="backMenu()">Back to Selection Menu</button>
+
+<p class="note">
+This screening test is not a medical diagnosis and should not replace professional consultation.
+</p>
+
+</section>
+
+
+<!-- PAGE 5 -->
+
+<section id="result">
+
+<div class="result-container">
+
+<h2>🧠 MindCheck Mental Health Result</h2>
+
+<div class="result-grid">
+
+<!-- LEFT : CHART -->
+<div class="result-card chart-card">
+
+<h3 id="resultTitle"></h3>
+
+<canvas id="chart"></canvas>
+
+<h3 id="scoreText"></h3>
+
+</div>
+
+<!-- RIGHT : REFERENCE TABLES -->
+<div class="result-card table-card" id="testResult"></div>
+
+</div>
+
+<div class="result-buttons">
+
+<button onclick="downloadPDF()">Download PDF Report</button>
+
+<button onclick="backMenu()">Back to Selection Menu</button>
+
+</div>
+
+<p class="note">
+This screening test is not a medical diagnosis and should not replace professional consultation.
+</p>
+
+</div>
+
+</section>
+
+
+
+<footer class="footer">
+
+<a href="privacy.html">Privacy Policy</a> |
+<a href="terms.html">Terms of Use</a> |
+<a href="disclaimer.html">Disclaimer</a>
+
+</footer>
+
+
+
+
+<script src="criteria.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>
