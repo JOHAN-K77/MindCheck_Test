@@ -367,6 +367,8 @@ function showResult() {
 		}
 	}
 
+	html += "<br><p>Untuk konsultasi lebih lanjut, silakan hubungi:</p><ul><li>Ani - Bali Pelita Jiwa (+62 821-4417-6880)</li><li>Wing Amerta RSUP Ngoerah (d/h Sanglah) (+62 851-0640-5474)</li><li>RS Kasih Ibu Denpasar (+62 811-3831-5013)</li></ul>"
+
 	document.getElementById("testResult").innerHTML = ""
 	document.getElementById("testResult").innerHTML = html
 }
